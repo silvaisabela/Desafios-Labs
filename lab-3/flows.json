@@ -1,0 +1,420 @@
+[
+    {
+        "id": "557b56b68f6c5c20",
+        "type": "tab",
+        "label": "LAB 3 - Desafio 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7fe10a9420e4a572",
+        "type": "serial in",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "serial": "67a10d61247697d5",
+        "x": 270,
+        "y": 240,
+        "wires": [
+            [
+                "9d6b25f82733e652"
+            ]
+        ]
+    },
+    {
+        "id": "9d6b25f82733e652",
+        "type": "json",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 240,
+        "wires": [
+            [
+                "c0f6587a3de985b6",
+                "0ba2b3a6fab0dc42",
+                "5f1871156739b068",
+                "79313af2198ba7dd"
+            ]
+        ]
+    },
+    {
+        "id": "c0f6587a3de985b6",
+        "type": "change",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "807ce260e9f25036",
+                "1a4f9cb2cb2920aa"
+            ]
+        ]
+    },
+    {
+        "id": "807ce260e9f25036",
+        "type": "ui_gauge",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "group": "14b45a2457b4a37e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0ba2b3a6fab0dc42",
+        "type": "change",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.umidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 360,
+        "wires": [
+            [
+                "d818cdb0e7a33b7b",
+                "81a8b7ea322bd814"
+            ]
+        ]
+    },
+    {
+        "id": "d818cdb0e7a33b7b",
+        "type": "ui_gauge",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "group": "14b45a2457b4a37e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 890,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1a4f9cb2cb2920aa",
+        "type": "ui_chart",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "group": "9d3b121a3ec2fbe2",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1010,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81a8b7ea322bd814",
+        "type": "ui_chart",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "group": "9d3b121a3ec2fbe2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f1871156739b068",
+        "type": "mqtt out",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "topic": "dash/dados",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e7c68d8268d9e653",
+        "x": 750,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "79313af2198ba7dd",
+        "type": "change",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.distancia",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 520,
+        "wires": [
+            [
+                "d20256bdb1e5cbb6"
+            ]
+        ]
+    },
+    {
+        "id": "d20256bdb1e5cbb6",
+        "type": "ui_chart",
+        "z": "557b56b68f6c5c20",
+        "name": "",
+        "group": "a763410f2293db8a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67a10d61247697d5",
+        "type": "serial-port",
+        "serialport": "COM6",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "14b45a2457b4a37e",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "933e0ccc7d2508be",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9d3b121a3ec2fbe2",
+        "type": "ui_group",
+        "name": "Group2",
+        "tab": "933e0ccc7d2508be",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e7c68d8268d9e653",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a763410f2293db8a",
+        "type": "ui_group",
+        "name": "Distancia",
+        "tab": "933e0ccc7d2508be",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "933e0ccc7d2508be",
+        "type": "ui_tab",
+        "name": "Lab3",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]

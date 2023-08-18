@@ -1,0 +1,509 @@
+[
+    {
+        "id": "ee57a6b1f5b7a89c",
+        "type": "tab",
+        "label": "LAB 3 - Desafio 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "768d8f5f9b6a3193",
+        "type": "mqtt in",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "topic": "dash/dados",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e7c68d8268d9e653",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "08e113bdc9e4c3a2",
+                "8237332e2b423af3",
+                "534be03612478f6f",
+                "b034d402c14107fc"
+            ]
+        ]
+    },
+    {
+        "id": "08e113bdc9e4c3a2",
+        "type": "change",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "2097425b7919e5a3",
+                "1adbb53616c639a6"
+            ]
+        ]
+    },
+    {
+        "id": "2097425b7919e5a3",
+        "type": "ui_gauge",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "group": "82f3762f534f2d16",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8237332e2b423af3",
+        "type": "change",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.umidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "ce01e1d9f96c6a85",
+                "742fdda3d58c255f"
+            ]
+        ]
+    },
+    {
+        "id": "ce01e1d9f96c6a85",
+        "type": "ui_gauge",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "group": "82f3762f534f2d16",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 610,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1adbb53616c639a6",
+        "type": "ui_chart",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "group": "ee735d6d7753f373",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "742fdda3d58c255f",
+        "type": "ui_chart",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "group": "ee735d6d7753f373",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5b34c0d8aea9095",
+        "type": "debug",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7b571e68ae9281a3",
+        "type": "serial out",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "serial": "67a10d61247697d5",
+        "x": 890,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "534be03612478f6f",
+        "type": "function",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "function 3",
+        "func": "if (msg.payload.temperatura >= 21){\n    msg.payload = {\n        \"alerta\": true,\n        \"message\": \"TEMPERATURA ACIMA DO LIMITE\",\n        \"led\": 255\n    }\n}\nelse \n    msg.payload = {\n        \"alerta\": false,\n        \"message\": null,\n        \"led\": 0\n    }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 300,
+        "wires": [
+            [
+                "2bc2f8c91146e112",
+                "e5b34c0d8aea9095"
+            ]
+        ]
+    },
+    {
+        "id": "0b9ecd7f7a5b3c31",
+        "type": "ui_toast",
+        "z": "ee57a6b1f5b7a89c",
+        "position": "top right",
+        "displayTime": "10",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "aaaa",
+        "topic": "ALERTA TEMPERATURA",
+        "name": "",
+        "x": 950,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "2bc2f8c91146e112",
+        "type": "switch",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "property": "payload.alerta",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "prev"
+            },
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [],
+            [
+                "76515e398808a036",
+                "7debd7e771082763"
+            ],
+            [
+                "30f6b643b0aadb77"
+            ]
+        ]
+    },
+    {
+        "id": "76515e398808a036",
+        "type": "change",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 280,
+        "wires": [
+            [
+                "0b9ecd7f7a5b3c31"
+            ]
+        ]
+    },
+    {
+        "id": "7debd7e771082763",
+        "type": "change",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"led\": 255}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "7b571e68ae9281a3"
+            ]
+        ]
+    },
+    {
+        "id": "30f6b643b0aadb77",
+        "type": "change",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"led\": 0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 440,
+        "wires": [
+            [
+                "7b571e68ae9281a3"
+            ]
+        ]
+    },
+    {
+        "id": "b034d402c14107fc",
+        "type": "file",
+        "z": "ee57a6b1f5b7a89c",
+        "name": "",
+        "filename": "C:/files/arquivo.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 350,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7c68d8268d9e653",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "82f3762f534f2d16",
+        "type": "ui_group",
+        "name": "Dash recebido gauge",
+        "tab": "c2cf9bf976399fb5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ee735d6d7753f373",
+        "type": "ui_group",
+        "name": "Dash recebido tab",
+        "tab": "c2cf9bf976399fb5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "67a10d61247697d5",
+        "type": "serial-port",
+        "serialport": "COM6",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "c2cf9bf976399fb5",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    }
+]

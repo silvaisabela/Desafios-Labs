@@ -1,0 +1,491 @@
+[
+    {
+        "id": "6151cc0125b96560",
+        "type": "tab",
+        "label": "LAB 3 - Desafio 1 e 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1023c0c636fa8dc2",
+        "type": "mqtt in",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "topic": "dash/dados",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e7c68d8268d9e653",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "a6ab14defe7fec22",
+                "dd509459633c218f",
+                "8beaa395af3b6980"
+            ]
+        ]
+    },
+    {
+        "id": "a6ab14defe7fec22",
+        "type": "change",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 80,
+        "wires": [
+            [
+                "f72d347e304ff139",
+                "06e01090ce1a626c"
+            ]
+        ]
+    },
+    {
+        "id": "f72d347e304ff139",
+        "type": "ui_gauge",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "group": "82f3762f534f2d16",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 750,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dd509459633c218f",
+        "type": "change",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.umidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "04b638e606663358",
+                "54b503ea598b4740"
+            ]
+        ]
+    },
+    {
+        "id": "04b638e606663358",
+        "type": "ui_gauge",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "group": "82f3762f534f2d16",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "06e01090ce1a626c",
+        "type": "ui_chart",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "group": "ee735d6d7753f373",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 750,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54b503ea598b4740",
+        "type": "ui_chart",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "group": "ee735d6d7753f373",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 750,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1cb052d962584179",
+        "type": "debug",
+        "z": "6151cc0125b96560",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "c5231f85c52e8626",
+        "type": "serial out",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "serial": "67a10d61247697d5",
+        "x": 1110,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8beaa395af3b6980",
+        "type": "function",
+        "z": "6151cc0125b96560",
+        "name": "function 2",
+        "func": "if (msg.payload.temperatura >= 21){\n    msg.payload = {\n        \"alerta\": true,\n        \"message\": \"TEMPERATURA ACIMA DO LIMITE\",\n        \"led\": 255\n    }\n}\nelse \n    msg.payload = {\n        \"alerta\": false,\n        \"message\": null,\n        \"led\": 0\n    }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 340,
+        "wires": [
+            [
+                "4a8a994af2c3a507",
+                "1cb052d962584179"
+            ]
+        ]
+    },
+    {
+        "id": "561e1b1b2a114d1f",
+        "type": "ui_toast",
+        "z": "6151cc0125b96560",
+        "position": "top right",
+        "displayTime": "10",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "aaaa",
+        "topic": "ALERTA TEMPERATURA",
+        "name": "",
+        "x": 1150,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4a8a994af2c3a507",
+        "type": "switch",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "property": "payload.alerta",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "prev"
+            },
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 670,
+        "y": 340,
+        "wires": [
+            [],
+            [
+                "af80b6bfec894b2d",
+                "7a786106eac43477"
+            ],
+            [
+                "c36c71a82fa09204"
+            ]
+        ]
+    },
+    {
+        "id": "af80b6bfec894b2d",
+        "type": "change",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 280,
+        "wires": [
+            [
+                "561e1b1b2a114d1f"
+            ]
+        ]
+    },
+    {
+        "id": "7a786106eac43477",
+        "type": "change",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"led\": 255}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 340,
+        "wires": [
+            [
+                "c5231f85c52e8626"
+            ]
+        ]
+    },
+    {
+        "id": "c36c71a82fa09204",
+        "type": "change",
+        "z": "6151cc0125b96560",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"led\": 0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 400,
+        "wires": [
+            [
+                "c5231f85c52e8626"
+            ]
+        ]
+    },
+    {
+        "id": "e7c68d8268d9e653",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "82f3762f534f2d16",
+        "type": "ui_group",
+        "name": "Dash recebido gauge",
+        "tab": "c2cf9bf976399fb5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ee735d6d7753f373",
+        "type": "ui_group",
+        "name": "Dash recebido tab",
+        "tab": "c2cf9bf976399fb5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "67a10d61247697d5",
+        "type": "serial-port",
+        "serialport": "COM6",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "c2cf9bf976399fb5",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    }
+]

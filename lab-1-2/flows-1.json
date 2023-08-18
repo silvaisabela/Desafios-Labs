@@ -1,0 +1,762 @@
+[
+    {
+        "id": "f984908dbabcd86b",
+        "type": "tab",
+        "label": "Lab 1 e 2 - Desafio 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "44305b47d6fc0403",
+        "type": "inject",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "05d9d6df2d8969f0",
+                "99b3e678f8725d57"
+            ]
+        ]
+    },
+    {
+        "id": "ba36c4ad5c7f6da8",
+        "type": "json",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 240,
+        "wires": [
+            [
+                "406555e829b91646",
+                "ac3eedc9504eb0af",
+                "99a259c568061e28"
+            ]
+        ]
+    },
+    {
+        "id": "05d9d6df2d8969f0",
+        "type": "http request",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "api.openweathermap.org/data/2.5/weather?q=São Paulo,SP,BR&appid=24171de52f798703fef579f75edaa8d0&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "ba36c4ad5c7f6da8"
+            ]
+        ]
+    },
+    {
+        "id": "f118a7fe9f655a2d",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "Temp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 220,
+        "wires": [
+            [
+                "c376a87092e055b1"
+            ]
+        ]
+    },
+    {
+        "id": "e77803c639aada19",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "Min",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 280,
+        "wires": [
+            [
+                "aca923777004c2e0"
+            ]
+        ]
+    },
+    {
+        "id": "7b27a831f34fc69a",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "Max",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.max",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 340,
+        "wires": [
+            [
+                "d90aee5593d3d8dc"
+            ]
+        ]
+    },
+    {
+        "id": "805a3d860f350c5b",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "Wind",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.wind",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 400,
+        "wires": [
+            [
+                "435751d068e72e05"
+            ]
+        ]
+    },
+    {
+        "id": "ba50240dcf640aa8",
+        "type": "ui_chart",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "b794e557771bf186",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Sensação térmica São Paulo",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1180,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99a259c568061e28",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 80,
+        "wires": [
+            [
+                "50ad7d1d149f0064"
+            ]
+        ]
+    },
+    {
+        "id": "50ad7d1d149f0064",
+        "type": "ui_gauge",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "654492fb90317fd3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Umidade São Paulo",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1160,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "406555e829b91646",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.feels_like",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 120,
+        "wires": [
+            [
+                "ba50240dcf640aa8"
+            ]
+        ]
+    },
+    {
+        "id": "cc97b27075545d0f",
+        "type": "function",
+        "z": "f984908dbabcd86b",
+        "name": "Temperatura",
+        "func": "const tempSp = msg.payload\n    .find((res) => res.name === \"São Paulo\")\n\nconst tempRj = msg.payload\n    .find((res) => res.name === \"Florianópolis\")\n\nmsg.payload = {\n    temp: [\n        {\n            \"series\": [\"temperatura\"],\n            \"data\": [[tempSp.main.temp, tempRj.main.temp]],\n            \"labels\": [\"São Paulo\", \"Florianópolis\"]\n        }\n    ],\n    min: [\n        {\n            \"series\": [\"min\"],\n            \"data\": [[tempSp.main.temp_min, tempRj.main.temp_min]],\n            \"labels\": [\"São Paulo\", \"Florianópolis\"]\n        }\n    ],\n     max: [\n        {\n            \"series\": [\"min\"],\n            \"data\": [[tempSp.main.temp_max, tempRj.main.temp_max]],\n            \"labels\": [\"São Paulo\", \"Florianópolis\"]\n        }\n    ],\n    wind: [\n        {\n            \"series\": [\"min\"],\n            \"data\": [[tempSp.wind.speed, tempRj.wind.speed]],\n            \"labels\": [\"São Paulo\", \"Florianópolis\"]\n        }\n    ]\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 280,
+        "wires": [
+            [
+                "f118a7fe9f655a2d",
+                "e77803c639aada19",
+                "7b27a831f34fc69a",
+                "805a3d860f350c5b"
+            ]
+        ]
+    },
+    {
+        "id": "99b3e678f8725d57",
+        "type": "http request",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "api.openweathermap.org/data/2.5/weather?q=Florianópolis,SC,BR&appid=24171de52f798703fef579f75edaa8d0&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "17b08f0769492152"
+            ]
+        ]
+    },
+    {
+        "id": "17b08f0769492152",
+        "type": "json",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 320,
+        "wires": [
+            [
+                "ac3eedc9504eb0af",
+                "f768c50e71419148",
+                "39ecab2b03c64875"
+            ]
+        ]
+    },
+    {
+        "id": "ac3eedc9504eb0af",
+        "type": "join",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 710,
+        "y": 280,
+        "wires": [
+            [
+                "cc97b27075545d0f"
+            ]
+        ]
+    },
+    {
+        "id": "c376a87092e055b1",
+        "type": "ui_chart",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "b1f57f9a603e69af",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1310,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aca923777004c2e0",
+        "type": "ui_chart",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "b1f57f9a603e69af",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Minima",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1300,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d90aee5593d3d8dc",
+        "type": "ui_chart",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "b1f57f9a603e69af",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Máxima",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1300,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "435751d068e72e05",
+        "type": "ui_chart",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "3cd8b845b4986885",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Velocidade do vento",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1340,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f768c50e71419148",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 540,
+        "wires": [
+            [
+                "ce79b0f0b8f599b1"
+            ]
+        ]
+    },
+    {
+        "id": "ce79b0f0b8f599b1",
+        "type": "ui_gauge",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "654492fb90317fd3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Umidade Florianopolis",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1160,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "39ecab2b03c64875",
+        "type": "change",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.feels_like",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 480,
+        "wires": [
+            [
+                "2e1357ccafd6663d"
+            ]
+        ]
+    },
+    {
+        "id": "2e1357ccafd6663d",
+        "type": "ui_chart",
+        "z": "f984908dbabcd86b",
+        "name": "",
+        "group": "b794e557771bf186",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Sensação térmica Florianópolis ",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b794e557771bf186",
+        "type": "ui_group",
+        "name": "Sensação térmica ",
+        "tab": "55bc23bbcfa10e30",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "654492fb90317fd3",
+        "type": "ui_group",
+        "name": "Umidade relativa",
+        "tab": "55bc23bbcfa10e30",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b1f57f9a603e69af",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "55bc23bbcfa10e30",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3cd8b845b4986885",
+        "type": "ui_group",
+        "name": "Velocidade do vento",
+        "tab": "55bc23bbcfa10e30",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "55bc23bbcfa10e30",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

@@ -1,0 +1,159 @@
+[
+    {
+        "id": "693b249dd1825c47",
+        "type": "tab",
+        "label": "Lab 1 e 2 - Desafio 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c96854ab0c10f9af",
+        "type": "inject",
+        "z": "693b249dd1825c47",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "5b34fc6615bc54bb"
+            ]
+        ]
+    },
+    {
+        "id": "5b34fc6615bc54bb",
+        "type": "http request",
+        "z": "693b249dd1825c47",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "api.openweathermap.org/data/2.5/weather?q=São Paulo, SP, BR&appid=24171de52f798703fef579f75edaa8d0",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "baaf24a26ff55770"
+            ]
+        ]
+    },
+    {
+        "id": "baaf24a26ff55770",
+        "type": "json",
+        "z": "693b249dd1825c47",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 200,
+        "wires": [
+            [
+                "ca224914851553b1",
+                "fdcbef25b9d25fe2"
+            ]
+        ]
+    },
+    {
+        "id": "ca224914851553b1",
+        "type": "change",
+        "z": "693b249dd1825c47",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 140,
+        "wires": [
+            [
+                "68fe6ae894ea03dd"
+            ]
+        ]
+    },
+    {
+        "id": "68fe6ae894ea03dd",
+        "type": "debug",
+        "z": "693b249dd1825c47",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "fdcbef25b9d25fe2",
+        "type": "function",
+        "z": "693b249dd1825c47",
+        "name": "function",
+        "func": "msg.payload = {\n    \"temperatura\": msg.payload.main.temp,\n    \"min\": msg.payload.main.temp_min,\n    \"max\": msg.payload.main.temp_max,\n    \"vento\": msg.payload.wind.speed\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 240,
+        "wires": [
+            [
+                "057d5af2d8272c1a"
+            ]
+        ]
+    },
+    {
+        "id": "057d5af2d8272c1a",
+        "type": "debug",
+        "z": "693b249dd1825c47",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 240,
+        "wires": []
+    }
+]
